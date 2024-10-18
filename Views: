@@ -1,0 +1,9 @@
+<!-- app/views/admin/dashboard/index.html.erb -->
+<h1>Admin Dashboard</h1>
+
+<ul>
+  <li>Total Users: <%= @total_users %></li>
+  <li>Total Stores: <%= @total_stores %></li>
+  <li>Total Submitted Ratings: <%= @total_ratings %></li>
+</ul>
+
