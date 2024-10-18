@@ -1,0 +1,1 @@
+@stores = Store.order("#{params[:sort]} #{params[:direction]}").all
