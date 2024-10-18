@@ -1,0 +1,2 @@
+rails generate devise:install  # Install Devise for authentication
+rails generate devise User      # Generate user model with Devise
