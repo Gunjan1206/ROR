@@ -1,0 +1,9 @@
+rails generate model Store name:string address:string user:references
+# app/models/store.rb
+class Store < ApplicationRecord
+  belongs_to :user   # Store is owned by a store owner
+  has_many :ratings  # Store has many ratings
+
+  validates :name, presence: true, length: { in: 20..60 }
+  validates :address, presence: true, length: { maximum: 400 }
+end
