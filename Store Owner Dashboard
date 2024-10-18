@@ -1,0 +1,8 @@
+# app/controllers/store_owner/dashboard_controller.rb
+class StoreOwner::DashboardController < ApplicationController
+  before_action :authenticate_store_owner!
+
+  def index
+    @stores = current_user.stores.includes(:ratings)
+  end
+end
