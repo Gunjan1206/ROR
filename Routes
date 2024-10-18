@@ -1,0 +1,20 @@
+# config/routes.rb
+Rails.application.routes.draw do
+  devise_for :users
+
+  namespace :admin do
+    resources :users, only: [:index, :new, :create]
+    resources :stores, only: [:index, :new, :create]
+    get 'dashboard', to: 'dashboard#index'
+  end
+
+  namespace :store_owner do
+    get 'dashboard', to: 'dashboard#index'
+  end
+
+  resources :stores, only: [:index, :show] do
+    resources :ratings, only: [:create, :update]
+  end
+
+  root to: "stores#index"
+end
